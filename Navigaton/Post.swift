@@ -8,7 +8,5 @@
 import UIKit
 
 struct Post {
-    var title: String = ""
+    var title: String
 }
-
-let post: Post = .init(title: "Hello World")

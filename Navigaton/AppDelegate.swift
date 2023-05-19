@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Novigaton
+//  Navigaton
 //
-//  Created by OlegZernyev on 17.05.2023.
+//  Created by OlegZernyev on 18.05.2023.
 //
 
 import UIKit
