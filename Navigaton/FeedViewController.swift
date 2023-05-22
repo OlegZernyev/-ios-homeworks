@@ -15,12 +15,17 @@ class FeedViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .gray
+        button.frame = CGRect(origin: CGPoint(x: 120, y: 370), size: CGSize(width: 150, height: 50))
+        button.tintColor = .black
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 22)
+        button.layer.cornerRadius = 20
         button.addTarget(self, action: #selector(showPost), for: .touchUpInside)
 
         return button
     }()
     
-    let postName: Post = .init(title: "Пост №1")
+        let postName = Post(title: "Пост")
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
