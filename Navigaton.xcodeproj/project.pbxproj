@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05163E6C2A1CBE9F002F449A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05163E6B2A1CBE9F002F449A /* LogInViewController.swift */; };
 		0526150C2A1783140017BB2E /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526150B2A1783140017BB2E /* ProfileHeaderView.swift */; };
 		05F7E63A2A166124009854C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7E6392A166124009854C5 /* AppDelegate.swift */; };
 		05F7E63C2A166124009854C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7E63B2A166124009854C5 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05163E6B2A1CBE9F002F449A /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		0526150B2A1783140017BB2E /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		05F7E6362A166124009854C5 /* Navigaton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigaton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F7E6392A166124009854C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				05F7E64D2A166169009854C5 /* ProfileViewController.swift */,
 				0526150B2A1783140017BB2E /* ProfileHeaderView.swift */,
+				05163E6B2A1CBE9F002F449A /* LogInViewController.swift */,
 			);
 			path = profile;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				05F7E6542A1661A2009854C5 /* InfoViewController.swift in Sources */,
 				05F7E63A2A166124009854C5 /* AppDelegate.swift in Sources */,
 				05F7E64E2A166169009854C5 /* ProfileViewController.swift in Sources */,
+				05163E6C2A1CBE9F002F449A /* LogInViewController.swift in Sources */,
 				05F7E63C2A166124009854C5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

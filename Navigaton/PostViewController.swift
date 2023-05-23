@@ -31,6 +31,7 @@ class PostViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .cyan
         navigationController?.navigationBar.barTintColor = .blue
+        navigationController?.navigationBar.isHidden = true
         navigationItem.rightBarButtonItem = barButtom
     }
     
