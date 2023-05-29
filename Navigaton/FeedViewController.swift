@@ -24,7 +24,6 @@ class FeedViewController: UIViewController {
         return button
     }()
     
-        let postName = Post(title: "Пост")
 
     
     override func viewDidLoad() {
@@ -45,7 +44,6 @@ class FeedViewController: UIViewController {
     
     @objc func showPost () {
         let postViewController = PostViewController()
-        postViewController.postName = postName.title
         //немодальное переход
         navigationController?.pushViewController(postViewController, animated: true)
     }
