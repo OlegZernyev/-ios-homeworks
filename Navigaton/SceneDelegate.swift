@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        let profileViewcontroller = ProfileViewController()
+        let profileViewcontroller = LogInViewController()
         let profileNovigationViewController = UINavigationController(rootViewController: profileViewcontroller)
         profileNovigationViewController.tabBarItem.title = "Profile"
         profileNovigationViewController.tabBarItem.image = UIImage(systemName: "person.crop.circle")
