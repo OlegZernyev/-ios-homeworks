@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "1651688962_36-gamerwall-pro-p-zevs-bog-molnii-krasivo-oboi-51.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
