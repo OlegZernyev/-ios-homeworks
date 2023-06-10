@@ -11,9 +11,28 @@ import UIKit
 class ProfileHeaderView: UIView {
     
 
+    private let backView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.alpha = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var closeButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(systemName: "x.circle"), for: .normal)
+        button.tintColor = .black
+        button.alpha = 0
+        button.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeButtonTap)))
+        button.isUserInteractionEnabled = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     private var statusText: String = ""
 
-    private let imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.borderColor = UIColor.white.cgColor
         imageView.layer.borderWidth = 3
@@ -21,6 +40,8 @@ class ProfileHeaderView: UIView {
         imageView.image = UIImage(named: "cat")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(avatarTap)))
+        imageView.isUserInteractionEnabled = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -83,11 +104,14 @@ class ProfileHeaderView: UIView {
     }
     
     func setupViews(){
-        addSubview(imageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
         addSubview(button)
         addSubview(statusTextFeld)
+        addSubview(backView)
+        addSubview(imageView)
+        addSubview(closeButton)
+
     }
         
             private  func setupLayoutConstraint() {
@@ -111,12 +135,23 @@ class ProfileHeaderView: UIView {
                 button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
                 button.heightAnchor.constraint(equalToConstant: 50),
                 button.bottomAnchor.constraint(equalTo: bottomAnchor),
+                button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
                 
                 statusTextFeld.topAnchor.constraint(equalTo: subtitleLabel.bottomAnchor, constant: 10),
                 statusTextFeld.heightAnchor.constraint(equalToConstant: 40),
                 statusTextFeld.widthAnchor.constraint(equalToConstant: 200),
                 statusTextFeld.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
                 statusTextFeld.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+                
+                closeButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16),
+                closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+                closeButton.widthAnchor.constraint(equalToConstant: 30),
+                closeButton.heightAnchor.constraint(equalToConstant: 30),
+                
+                backView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                backView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+                backView.topAnchor.constraint(equalTo: topAnchor),
+                backView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             ])
         }
 
@@ -129,4 +164,38 @@ class ProfileHeaderView: UIView {
             }
             print(text)}
     }
+    
+    
+    @objc private func avatarTap() {
+        
+        let widthScreen = UIScreen.main.bounds.width
+        let heightScreen = UIScreen.main.bounds.width * 2
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.imageView.transform = CGAffineTransform(scaleX: 4, y: 4)
+            self.backView.frame = .init(origin: CGPoint(x: 0, y: 0), size: CGSize(width: widthScreen, height: heightScreen))
+            self.imageView.center = self.backView.center
+            self.imageView.layer.cornerRadius = 0
+        }) { _ in
+            UIView.animate(withDuration: 0.3) {
+                self.closeButton.alpha = 1
+                self.backView.alpha = 0.5
+            }
+        }
+    }
+    
+    @objc private func closeButtonTap() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.closeButton.alpha = 0
+            self.backView.alpha = 0
+
+        }) { _ in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.imageView.frame = .init(origin: CGPoint(x: 16, y: 16), size: CGSize(width: 100, height: 100))
+                self.imageView.transform = .identity
+                self.imageView.layer.cornerRadius = 50
+            })
+        }
+    }
+    
 }

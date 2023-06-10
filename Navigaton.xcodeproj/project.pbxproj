@@ -64,8 +64,8 @@
 		0526150A2A1782FE0017BB2E /* profile */ = {
 			isa = PBXGroup;
 			children = (
-				05F7E64D2A166169009854C5 /* ProfileViewController.swift */,
 				0526150B2A1783140017BB2E /* ProfileHeaderView.swift */,
+				05F7E64D2A166169009854C5 /* ProfileViewController.swift */,
 				05163E6B2A1CBE9F002F449A /* LogInViewController.swift */,
 			);
 			path = profile;

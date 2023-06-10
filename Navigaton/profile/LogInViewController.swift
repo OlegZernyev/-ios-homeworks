@@ -25,10 +25,6 @@ class LogInViewController: UIViewController {
         return view
     }()
     
-
-
-    
-    
     private let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
@@ -45,7 +41,7 @@ class LogInViewController: UIViewController {
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         textField.leftViewMode = .always
         textField.backgroundColor = .systemGray6
-        textField.tintColor = colorSet
+        textField.tintColor = UIColor(named: "colorBlue")
         textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.delegate = self
@@ -58,7 +54,7 @@ class LogInViewController: UIViewController {
         return view
     }()
     
-    private let colorSet = UIColor(red: 0x48 / 255.0, green: 0x85 / 255.0, blue: 0xCC / 255.0, alpha: 1.0)
+//    private let colorSet = UIColor(red: 0x48 / 255.0, green: 0x85 / 255.0, blue: 0xCC / 255.0, alpha: 1.0)
     
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField()    //
@@ -70,7 +66,7 @@ class LogInViewController: UIViewController {
         textField.leftViewMode = .always
         textField.backgroundColor = .systemGray6 //
         textField.isSecureTextEntry = true
-        textField.tintColor = colorSet
+        textField.tintColor = UIColor(named: "colorBlue")
         textField.autocapitalizationType = .none
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.delegate = self
@@ -96,7 +92,7 @@ class LogInViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
-        button.setBackgroundImage(UIImage(named: "blue_pixel"), for: .normal)
+        button.backgroundColor = UIColor(named: "colorBlue")
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(pushLogin), for: .touchUpInside)

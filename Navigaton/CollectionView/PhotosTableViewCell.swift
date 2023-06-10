@@ -101,12 +101,12 @@ class PhotosTableViewCell: UITableViewCell {
     }
     
     private func setupContraints() {
-        let imageSize: CGFloat = contentView.frame.width / 4
+        let imageSize = (UIScreen.main.bounds.width - 50) / 4
         NSLayoutConstraint.activate([
             
             layout.topAnchor.constraint(equalTo: contentView.topAnchor),
-            layout.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            layout.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
+            layout.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            layout.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             layout.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             
             header.topAnchor.constraint(equalTo: layout.topAnchor ,constant: Metric.labelInset),
