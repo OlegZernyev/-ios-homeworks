@@ -92,7 +92,7 @@ class LogInViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 10
         button.clipsToBounds = true
-        button.backgroundColor = UIColor(named: "colorBlue")
+        button.backgroundColor = UIColor(named: "ColorBlue")
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(pushLogin), for: .touchUpInside)
