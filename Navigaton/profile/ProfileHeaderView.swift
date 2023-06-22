@@ -65,7 +65,7 @@ class ProfileHeaderView: UIView {
         button.layer.shadowRadius = 4
         button.layer.shadowColor = UIColor.black.cgColor
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        button.addTarget(self, action: #selector(pushStatus), for: .touchUpInside)
         return button
     }()
     
@@ -155,11 +155,13 @@ class ProfileHeaderView: UIView {
             ])
         }
 
-    @objc func buttonPressed() {
+    @objc func pushStatus() {
        
         if let text =  statusTextFeld.text {
             subtitleLabel.text = text
             if subtitleLabel.text == "" {
+                subtitleLabel.text = " "
+                statusTextFeld.backgroundColor = UIColor(red: 240, green: 0, blue: 0, alpha: 0.3)
                 subtitleLabel.text = " "
             }
             print(text)}
@@ -173,7 +175,9 @@ class ProfileHeaderView: UIView {
         
         UIView.animate(withDuration: 0.2, animations: {
             self.imageView.transform = CGAffineTransform(scaleX: 4, y: 4)
+       
             self.backView.frame = .init(origin: CGPoint(x: 0, y: 0), size: CGSize(width: widthScreen, height: heightScreen))
+            
             self.imageView.center = self.backView.center
             self.imageView.layer.cornerRadius = 0
         }) { _ in

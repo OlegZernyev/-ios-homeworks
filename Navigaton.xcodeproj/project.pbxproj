@@ -14,6 +14,7 @@
 		059B50A42A2F36F300A5E3D2 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B50A32A2F36F300A5E3D2 /* PhotosViewController.swift */; };
 		059B50A62A2F371E00A5E3D2 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B50A52A2F371E00A5E3D2 /* PhotosCollectionViewCell.swift */; };
 		059B50A82A2F37CA00A5E3D2 /* PostImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059B50A72A2F37CA00A5E3D2 /* PostImages.swift */; };
+		059E66A82A441B160041F761 /* OnePostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059E66A72A441B160041F761 /* OnePostVC.swift */; };
 		05F7E63A2A166124009854C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7E6392A166124009854C5 /* AppDelegate.swift */; };
 		05F7E63C2A166124009854C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7E63B2A166124009854C5 /* SceneDelegate.swift */; };
 		05F7E63E2A166124009854C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F7E63D2A166124009854C5 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		059B50A32A2F36F300A5E3D2 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		059B50A52A2F371E00A5E3D2 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		059B50A72A2F37CA00A5E3D2 /* PostImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImages.swift; sourceTree = "<group>"; };
+		059E66A72A441B160041F761 /* OnePostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnePostVC.swift; sourceTree = "<group>"; };
 		05F7E6362A166124009854C5 /* Navigaton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigaton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05F7E6392A166124009854C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05F7E63B2A166124009854C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				0526150B2A1783140017BB2E /* ProfileHeaderView.swift */,
 				05F7E64D2A166169009854C5 /* ProfileViewController.swift */,
+				059E66A72A441B160041F761 /* OnePostVC.swift */,
 				05163E6B2A1CBE9F002F449A /* LogInViewController.swift */,
 			);
 			path = profile;
@@ -201,6 +204,7 @@
 				0526150C2A1783140017BB2E /* ProfileHeaderView.swift in Sources */,
 				05F7E6542A1661A2009854C5 /* InfoViewController.swift in Sources */,
 				05F7E63A2A166124009854C5 /* AppDelegate.swift in Sources */,
+				059E66A82A441B160041F761 /* OnePostVC.swift in Sources */,
 				05F7E64E2A166169009854C5 /* ProfileViewController.swift in Sources */,
 				059B50A82A2F37CA00A5E3D2 /* PostImages.swift in Sources */,
 				05163E6C2A1CBE9F002F449A /* LogInViewController.swift in Sources */,

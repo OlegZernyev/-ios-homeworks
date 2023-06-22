@@ -12,7 +12,6 @@ class ProfileViewController: UIViewController {
     
     //MARK: - Properties
 
-    private let postFeed = Post.createPost()
 
     
     private lazy var tableView: UITableView = {
@@ -29,6 +28,8 @@ class ProfileViewController: UIViewController {
         tableView.delegate = self
         return tableView
     }()
+    
+    private var dataPosts = Post.createPost()
     
     //MARK: - LifeCycle
 
@@ -74,7 +75,7 @@ extension ProfileViewController: UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return  postFeed.count
+            return  dataPosts.count
         }    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -84,7 +85,23 @@ extension ProfileViewController: UITableViewDataSource {
             return cell
         } else  {
             let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.identifier, for: indexPath) as! PostTableViewCell
-            cell.setupCell(model: postFeed[indexPath.row])
+            cell.setupCell(model: dataPosts[indexPath.row])
+            cell.viewPlus = {
+                let onePostVC = OnePostVC()
+                self.dataPosts[indexPath.row].views += 1
+                self.tableView.reloadData()
+                onePostVC.detailPost = self.dataPosts[indexPath.row]
+                onePostVC.parentNavigationControler = self.navigationController
+                self.navigationController?.present(onePostVC, animated: true)
+            }
+        
+            cell.likePlus = {
+//                if !self.postFeed[indexPath.row].isLike {
+                    self.dataPosts[indexPath.row].likes += 1
+//                    self.postFeed[indexPath.row].isLike = true
+                    self.tableView.reloadData()
+//                }
+            }
             return cell
         }
     }
