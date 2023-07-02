@@ -27,8 +27,10 @@ class PostTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let likes: UILabel = {
+    private lazy var likes: UILabel = {
         let label = UILabel()
+        label.isUserInteractionEnabled = true
+        label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pushLike)))
         label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -53,8 +55,10 @@ class PostTableViewCell: UITableViewCell {
         return view
     }()
     
-    private let postImgView: UIImageView = {
+    private lazy var postImgView: UIImageView = {
         let imageView = UIImageView()
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onePost)))
+        imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -122,6 +126,15 @@ class PostTableViewCell: UITableViewCell {
             views.heightAnchor.constraint(equalToConstant: 50),
             views.bottomAnchor.constraint(equalTo: likes.bottomAnchor)
         ])
+    }
+    var likePlus: (() -> Void)? = nil
+    @objc func pushLike() {
+        if let action = self.likePlus { action() }
+    }
+    
+    var viewPlus: (() -> Void)? = nil
+    @objc func onePost() {
+        if let action = self.viewPlus { action() }
     }
 }
 
